@@ -18,7 +18,7 @@ const PostCard = ({ post }: PostCardProps) => {
   return (
     <div className="post-card">
       <div className="flex-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3  w-full">
           <Link to={`/profile/${post.creator.$id}`}>
             <img
               src={
@@ -30,23 +30,23 @@ const PostCard = ({ post }: PostCardProps) => {
             />
           </Link>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <p className="base-medium lg:body-bold text-light-1">
               {post.creator.name}
             </p>
-            <div className="flex-center gap-2 text-primary-500">
+            <div className="flex justify-start flex-col gap-2 text-primary-500 mt-2 ">
               <p className="subtle-semibold lg:small-regular ">
-                {multiFormatDateString(post.$createdAt)}
+                 {multiFormatDateString(post.$createdAt)}
               </p>
-              •
+
               <p className="subtle-semibold lg:small-regular">
-                {post.company2}
+                 {post.company2}  <span className="subtle-semibold lg:small-regular">
+                  ({post.location})
+                </span>
               </p>
-              
-              <p className="subtle-semibold lg:small-regular">
-                ({post.location})
-              </p>
-              
+
+
+
             </div>
           </div>
         </div>
